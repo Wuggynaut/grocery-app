@@ -2,7 +2,7 @@
     /* Colors */
     --color-primary: oklch(59.6% 0.145 163.225);
     --color-primary-dark: oklch(37.8% 0.077 168.94);
-    --color-secondary: #94a46f;
+    --color-secondary: oklch(84.1% 0.238 128.85);
     --color-success: #10b981;
     --color-danger: #ef4444;
     --color-warning: #f59e0b;
@@ -145,10 +145,18 @@ p {
     transform: rotate(45deg);
 }
 
+.icon-button svg {
+    width: var(--spacing-lg);
+    height: var(--spacing-lg);
+    color: var(--color-secondary);
+}
+
 .input-container {
+    display: flex;
+    gap: var(--spacing-md);
     background-color: var(--color-primary);
     color: var(--color-text-light);
-    padding: var(--spacing-sm);
+    padding: var(--spacing-md);
     box-shadow: var(--shadow-md);
     margin-bottom: var(--spacing-md);
     align-items: center;

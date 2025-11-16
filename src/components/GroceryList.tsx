@@ -1,8 +1,14 @@
+import { IoSend } from "react-icons/io5";
 import { useItem } from "../stores/itemStore";
 import { GroceryItem } from "./GroceryItem";
+import { IconButton } from "./IconButton";
 
 export function GroceryList() {
     const { items, toggleItem } = useItem();
+
+    const handleAdd = () => {
+
+    }
 
     return (
         <div>
@@ -11,6 +17,7 @@ export function GroceryList() {
             </div>
             <div className="input-container">
                 <input className="input-bar" type="text" id="add" placeholder="Add item..." />
+                <IconButton onClick={handleAdd} IconComponent={IoSend} />
             </div>
         </div>
     )
