@@ -4,7 +4,7 @@
     --color-primary-dark: oklch(37.8% 0.077 168.94);
     --color-secondary: oklch(84.1% 0.238 128.85);
     --color-success: #10b981;
-    --color-danger: #ef4444;
+    --color-alert: #ef4444;
     --color-warning: #f59e0b;
 
     /* Neutral colors */
@@ -101,6 +101,8 @@ p {
     display: grid;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     gap: var(--spacing-sm);
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
 .list-item {
@@ -109,6 +111,11 @@ p {
     gap: var(--spacing-sm);
     padding: var(--spacing-sm);
     border-bottom: 1px solid var(--color-border);
+    cursor: grab;
+}
+
+.list-item:active {
+    cursor: grabbing;
 }
 
 .checked {
@@ -148,7 +155,6 @@ p {
 .icon-button svg {
     width: var(--spacing-lg);
     height: var(--spacing-lg);
-    color: var(--color-secondary);
 }
 
 .input-container {
@@ -182,4 +188,20 @@ p {
 
 .input-bar:focus::placeholder {
     opacity: 0;
+}
+
+.secondary {
+    color: var(--color-secondary);
+}
+
+.warning {
+    color: var(--color-warning);
+}
+
+.alert {
+    color: var(--color-alert);
+}
+
+.right {
+    margin-left: auto;
 }
