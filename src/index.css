@@ -116,6 +116,7 @@ p {
 
 .list-item:active {
     cursor: grabbing;
+    box-shadow: var(--shadow-lg);
 }
 
 .checked {

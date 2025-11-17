@@ -7,7 +7,7 @@ import { IoMdTrash } from 'react-icons/io';
 interface GroceryItemProps {
     item: groceryItem;
     onToggle: () => void;
-    onDelete: (id: string) => void;
+    onDelete: () => void;
 }
 
 export function GroceryItem({ item, onToggle, onDelete }: GroceryItemProps) {
@@ -43,7 +43,7 @@ export function GroceryItem({ item, onToggle, onDelete }: GroceryItemProps) {
             <span className={item.checked ? "checked" : ""}>
                 {item.name}
             </span>
-            <IconButton onClick={() => onDelete} IconComponent={IoMdTrash} className='alert right' />
+            <IconButton onClick={onDelete} IconComponent={IoMdTrash} className='alert right' />
         </div >
     )
 }

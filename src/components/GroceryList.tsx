@@ -22,9 +22,8 @@ export function GroceryList() {
     const sensors = useSensors(
         useSensor(PointerSensor, {
             activationConstraint: {
-                delay: 250,
-                tolerance: 5,
-                distance: 8
+                delay: 150,
+                tolerance: 5
             }
         }),
         useSensor(KeyboardSensor, {
@@ -45,6 +44,10 @@ export function GroceryList() {
 
     const handleAdd = (event: React.FormEvent) => {
         event.preventDefault();
+        if (!itemName.trim()) {
+            return;
+        }
+
         const item: groceryItem = {
             id: crypto.randomUUID(),
             name: itemName,
@@ -74,8 +77,8 @@ export function GroceryList() {
                                 item={i}
                                 onToggle={() => toggleItem(i.id)}
                                 onDelete={() => handleDelete(i.id)}
-                            />)}
-
+                            />
+                        )}
                     </SortableContext>
                 </DndContext>
             </div>
